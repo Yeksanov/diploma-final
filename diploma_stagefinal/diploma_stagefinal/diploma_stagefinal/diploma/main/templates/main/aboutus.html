@@ -1,0 +1,57 @@
+{% extends 'main/auth_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-page">
+<section class="team-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Meet Our Team</h2>
+    <div class="row justify-content-center gap-4">
+
+      <!-- Altynbek -->
+      <div class="col-md-4 col-sm-6 team-card text-center p-4 bg-white shadow rounded-4">
+        <img src="{% static 'main/img/team1.jpg' %}" alt="Altynbek" class="rounded-circle mb-3 team-img" height="120" width="120">
+          <h5 class="fw-bold">Altynbek N.</h5>
+          <p class="text-muted">Backend Developer</p>
+          <p class="text-secondary small">"Clean backend logic and secure architecture."</p>
+      </div>
+
+
+
+      <!-- Merey -->
+      <div class="col-md-4 col-sm-6 team-card text-center p-4 bg-white shadow rounded-4">
+        <img src="{% static 'main/img/team2.jpg' %}" alt="Merey" class="rounded-circle mb-3 team-img" height="120">
+        <h5>Merey Y.</h5>
+        <p class="text-muted mb-1">UI/UX & Frontend</p>
+        <p class="text-secondary small">"Designs that are both beautiful and usable."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Values -->
+  <section class="values-section bg-light py-5">
+    <div class="container text-center">
+      <h2>Our Values</h2>
+      <div class="row mt-4">
+        <div class="col-md-3"><i class="bi bi-lock-fill fs-1 text-primary"></i><p>Security</p></div>
+        <div class="col-md-3"><i class="bi bi-lightning-fill fs-1 text-warning"></i><p>Speed</p></div>
+        <div class="col-md-3"><i class="bi bi-graph-up fs-1 text-success"></i><p>Growth</p></div>
+        <div class="col-md-3"><i class="bi bi-heart-fill fs-1 text-danger"></i><p>Care</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section text-center py-5">
+    <h3>Ready to take control of your finances?</h3>
+    <a href="{% url 'index' %}" class="btn btn-primary mt-3 px-4 py-2">Start Planning</a>
+  </section>
+
+</div>
+{% endblock %}

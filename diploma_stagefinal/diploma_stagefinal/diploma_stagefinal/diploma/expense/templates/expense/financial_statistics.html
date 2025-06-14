@@ -1,0 +1,63 @@
+{% extends 'main/auth_base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'expense/css/financial_statistics.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="box">
+</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Financial Statistics</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card border-success mb-3">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title">Total Income</h3>
+                </div>
+                <div class="card-body">
+                    <p>{{ total_income }} $</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: {{ income_percentage }}%;" aria-valuenow="{{ income_percentage }}" aria-valuemin="0" aria-valuemax="100">{{ income_percentage }}%</div>
+                    </div>
+                    <p class="text-center mt-2">{{ income_percentage }}% of Remaining Total</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-danger mb-3">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="card-title">Total Expenses</h3>
+                </div>
+                <div class="card-body">
+                    <p>{{ total_expenses }} $</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ expenses_percentage }}%;" aria-valuenow="{{ expenses_percentage }}" aria-valuemin="0" aria-valuemax="100">{{ expenses_percentage }}%</div>
+                    </div>
+                    <p class="text-center mt-2">{{ expenses_percentage }}% of Remaining Total</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">Remaining Total</h3>
+                </div>
+                <div class="card-body">
+                    <p>{{ remaining_finance }} $</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                    <p class="text-center mt-2">100% of Remaining Total</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'pdf' %}" class="btn btn-primary">Financial Summary</a>
+        <a href="{% url 'expenses' %}" class="btn btn-primary">Back</a>
+    </div>
+</div>
+{% endblock %}

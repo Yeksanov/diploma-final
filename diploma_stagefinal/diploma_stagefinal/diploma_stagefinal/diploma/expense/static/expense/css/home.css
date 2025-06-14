@@ -1,0 +1,188 @@
+body {
+  background-color: #fdfdff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid,
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 15px;
+  background-color: #fff;
+  text-align: left;
+  scroll-margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero h1 .highlight {
+  background: #fff700;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 25px;
+}
+
+/* Image box */
+.animated-box {
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  background: #f0f8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.animated-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Features / Testimonials / Subscribe */
+.features,
+.testimonials,
+.subscribe {
+  padding: 60px 15px;
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+.feature-box,
+.testimonial-box {
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-box:hover,
+.testimonial-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-box i {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.testimonial-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subscribe input[type="email"] {
+  max-width: 300px;
+  padding: 10px;
+}
+
+/* Stats */
+.stats {
+  background-color: #f8f9fa;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+/* Navbar (fixed) */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive - Mobile styles */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .animated-box {
+    height: 250px;
+  }
+
+  .feature-box,
+  .testimonial-box {
+    margin-bottom: 20px;
+  }
+
+  .subscribe input[type="email"],
+  .subscribe button {
+    width: 100%;
+  }
+
+}

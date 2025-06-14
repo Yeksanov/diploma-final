@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid rgb(17, 237, 79);
+}
+
+.bg-image {
+  background-image: url("https://sun9-33.userapi.com/impg/3H3kV17eXqtt5IFsQS6FMdaQp7lwQjqX5R63Jg/edCW6vxKRD4.jpg?size=2560x1493&quality=95&sign=38928bc0aeb9e2abd9f10de599c9c2c3&type=album");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.head {
+  background: rgb(30, 166, 69);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.head h1,
+.head p {
+  text-align: center;
+  color: white;
+}
+
+button {
+  outline: none;
+  background: rgb(30, 166, 69);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin: 10px auto;
+  display: block;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.contact-page {
+  background: #f9fafb;
+  min-height: 80vh;
+  padding: 40px 20px;
+}
+
+.contact-page .card {
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-page .card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page .form-control {
+  margin-bottom: 15px;
+}
+
+.contact-page .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* ✅ Мобильная адаптация */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  .head h1 {
+    font-size: 1.5rem;
+  }
+
+  .head p {
+    font-size: 1rem;
+  }
+
+  .contact-page {
+    padding: 30px 15px;
+  }
+
+  .contact-page .card {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

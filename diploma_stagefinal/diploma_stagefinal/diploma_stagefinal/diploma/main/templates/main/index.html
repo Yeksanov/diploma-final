@@ -1,0 +1,67 @@
+{% extends 'main/auth_base.html' %}
+{% load static %}
+
+{% block css %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Budget Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="card p-4 shadow-sm">
+    <h2 class="text-center text-primary">Smart Budget Planner</h2>
+    <p class="text-center info-text">Plan your spending wisely. Enter your income and estimate key expenses.</p>
+
+    <div class="section-title">Income</div>
+    <div class="mb-3">
+      <label for="total-income" class="form-label">Total Monthly Income</label>
+      <input type="number" id="total-income" class="form-control" placeholder="e.g., 2000">
+      <p id="balance-error-msg" class="text-danger d-none mt-1">Please enter a valid income amount.</p>
+    </div>
+
+    <div class="section-title">Expenses</div>
+    <div class="mb-3">
+      <label for="food-expense" class="form-label">Food & Groceries</label>
+      <input type="number" id="food-expense" class="form-control" placeholder="e.g., 400">
+    </div>
+    <div class="mb-3">
+      <label for="rent-expense" class="form-label">Rent / Housing</label>
+      <input type="number" id="rent-expense" class="form-control" placeholder="e.g., 700">
+    </div>
+    <div class="mb-3">
+      <label for="clothes-expense" class="form-label">Clothing</label>
+      <input type="number" id="clothes-expense" class="form-control" placeholder="e.g., 100">
+    </div>
+
+    <button type="button" id="calculate-btn" class="btn btn-primary w-100">Calculate</button>
+
+    <div class="mt-4 info-text">
+      <p><strong>Total Expenses:</strong> <span id="expenses-amount">0</span></p>
+      <p><strong>Remaining Balance:</strong> <span id="balance-amount">0</span></p>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="section-title">Savings</div>
+    <div class="mb-3">
+      <label for="saving-percentage" class="form-label">Saving Percentage (%)</label>
+      <input type="number" id="saving-percentage" class="form-control" placeholder="e.g., 20">
+    </div>
+    <button type="button" id="saving-btn" class="btn btn-success w-100">Calculate Savings</button>
+
+    <div class="mt-4 info-text">
+      <p><strong>Saving Amount:</strong> <span id="saving-amount">0</span></p>
+      <p><strong>Remaining After Saving:</strong> <span id="remaining-amount">0</span></p>
+      <p id="saving-balance-error-msg" class="text-danger mt-2 d-none">Saving amount exceeds available balance.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+  <script src="{% static 'main/js/app.js' %}"></script>
+{% endblock %}

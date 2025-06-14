@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>A website for easy financial Managment</title>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">
+  <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'main/css/main.css' %}" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="hero_area" >
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
+             <img src="{% static 'main/img/icon-only.png' %}" alt="WalletWise Logo" style="height: 28px; width: auto;">
+                <span class="fw-bold fs-5" style="color: #4CAF50;">Finance<span style="color:#673AB7;">App</span></span>
+
+          </a>
+
+
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+
+            </ul>
+            <div class="user_option">
+              <a href="">
+                <img src="images/user.png" alt="">
+                <span>
+                  Login
+                </span>
+              </a>
+
+            </div>
+          </div>
+          <div>
+            <div class="custom_menu-btn ">
+
+
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+  
+    <section class="slider_section ">
+      <div class="">
+
+
+        </a>
+      </div>
+      <div class="number_box">
+        <div>
+          <ol class="carousel-indicators indicator-2">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+
+        </div>
+      </div>
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+
+
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                        <h2 class="fw-bold" style="font-size: 1.5rem;">
+                            <span style="color: #4CAF50;">Finance</span><span style="color: #673AB7;">App</span>
+                        </h2>
+
+                    </h1>
+<p>Smart tools to track your budget, plan expenses, and grow savings.</p>
+                      <ul class="list-unstyled mt-4">
+  <li>✔️ Track income & expenses</li>
+  <li>✔️ Visualize with charts</li>
+  <li>✔️ Set savings goals</li>
+</ul>
+
+
+                    <p>
+                      This is a website for maintaining your budget and finances, manage your money wisely.
+                    </p>
+                    <div class="btn-box mt-4">
+                        <a href="{% url 'register' %}" class="btn btn-success mr-2">Sign Up</a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="col-md-6 img-container">
+                  <div class="img-box">
+                    <img src="{% static 'main/img/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="row">
+      </div>
+    </section>
+    
+  </div>
+
+
+  
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+
+            </div>
+            <p>
+              We phoenix team of five people tried to make a site for budgeting, this is our first experience of working on a full-fledged project, knowing what problems the population of our country we will be glad if our project will help at least one citizen.
+            </p>
+
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'main/img/about-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+ 
+  <section class="container-fluid footer_section ">
+    <div class="container">
+      <p>
+        &copy; 2024 SDU University
+        <a href="https://html.design/"></a>
+      </p>
+    </div>
+  </section>
+  
+
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
+  </script>
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        420: {
+          items: 2
+        },
+        1000: {
+          items: 5
+        }
+      }
+
+    });
+  </script>
+  <script>
+    var nav = $("#navbarSupportedContent");
+    var btn = $(".custom_menu-btn");
+    btn.click
+    btn.click(function (e) {
+
+      e.preventDefault();
+      nav.toggleClass("lg_nav-toggle");
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+    });
+  </script>
+  <script>
+    $('.carousel').on('slid.bs.carousel', function () {
+      $(".indicator-2 li").removeClass("active");
+      indicators = $(".carousel-indicators li.active").data("slide-to");
+      a = $(".indicator-2").find("[data-slide-to='" + indicators + "']").addClass("active");
+      console.log(indicators);
+
+    })
+  </script>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

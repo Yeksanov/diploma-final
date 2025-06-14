@@ -1,0 +1,181 @@
+.goal-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.goal-container input[type="text"],
+.goal-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.goal-container button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.goal-container button:hover {
+  background-color: #45a049;
+}
+
+.goal-progress-container {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.goal-progress-bar {
+  height: 10px;
+  background: linear-gradient(to right, #4CAF50, #8BC34A);
+  transition: width 0.4s ease;
+}
+
+.goal-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.goal-item small {
+  display: block;
+  margin-top: 5px;
+}
+
+.goal-delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.goal-delete-btn:hover {
+  background: #c82333;
+}
+
+.goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.goal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  transition: transform 0.2s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-3px);
+}
+
+.goal-title {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.goal-deadline {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.goal-progress-container {
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-bottom: 5px;
+}
+
+.goal-progress-bar {
+  height: 10px;
+  background: linear-gradient(to right, #4CAF50, #8BC34A);
+  transition: width 0.4s ease;
+}
+
+.goal-stats {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.goal-delete-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.goal-delete-btn:hover {
+  background: #d32f2f;
+}
+
+/* ✅ Мобильная адаптация */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  .goal-container, .goal-list {
+    max-width: 100%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .goal-container input[type="text"],
+  .goal-container input[type="number"],
+  .goal-container button {
+    font-size: 1rem;
+  }
+
+  .goal-card {
+    padding: 15px;
+  }
+
+  .goal-title {
+    font-size: 1rem;
+  }
+
+  .goal-deadline {
+    font-size: 0.85rem;
+  }
+
+  .goal-stats {
+    font-size: 0.85rem;
+  }
+
+  .goal-delete-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

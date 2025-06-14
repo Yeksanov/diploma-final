@@ -1,0 +1,106 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  background-size: cover;
+  background-position: center center;
+  box-sizing: border-box;
+}
+
+/* Кнопкалар */
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  background-color: #007bff;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 30px;
+  transition: all 0.15s ease-in-out;
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* Формалар */
+.custom-form {
+  margin-top: 0 !important;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.form-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Кестелер */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table thead {
+  background-color: #f1f1f1;
+}
+
+/* 🔽 Мобильная адаптация */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+  }
+  body {
+    font-size: 15px;
+  }
+
+  .page-wrapper {
+    margin: 20px 10px;
+    padding: 10px;
+  }
+
+  .form-wrapper {
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}

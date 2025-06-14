@@ -1,0 +1,13 @@
+body {
+            height:100vh;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-size:cover;
+            background-position:center center;
+            height: 800vh;
+            box-sizing: border-box;
+            background-image: url("https://sun9-79.userapi.com/impg/TSYrDVgNnR-uAKclYkA4fA4_S3RoJ89XBkLFfw/b9R7rRLenbQ.jpg?size=2560x2559&quality=95&sign=e3eede50e869218578dfece523660e91&type=album");
+        }

@@ -1,0 +1,47 @@
+{% extends 'main/auth_base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'expense/css/goals.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="goal-container">
+  <h2>Создать новую цель</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать</button>
+  </form>
+</div>
+
+<h3 style="text-align:center; margin-top: 40px;">Мои цели</h3>
+<div class="goal-list">
+  {% for goal in savings_goals %}
+    <div class="goal-card">
+      <div class="goal-title">{{ goal.name }} — {{ goal.target_amount }}</div>
+      <div class="goal-deadline">До {{ goal.deadline }}</div>
+      <div class="goal-progress-container">
+        {% if goal.target_amount > 0 %}
+          {% widthratio goal.current_amount goal.target_amount 100 as percent %}
+          <div class="goal-progress-bar" style="width: {{ percent }}%;"></div>
+        {% else %}
+          <div class="goal-progress-bar" style="width: 0%; background:#ccc;"></div>
+        {% endif %}
+      </div>
+      <div class="goal-stats">{{ goal.current_amount }} из {{ goal.target_amount }} ({{ percent }}%)</div>
+      <form method="post" style="display:inline;">
+        {% csrf_token %}
+        <input type="hidden" name="delete_goal" value="{{ goal.id }}">
+        <button type="submit" class="goal-delete-btn">Удалить</button>
+      </form>
+    </div>
+  {% empty %}
+    <p>Нет целей.</p>
+  {% endfor %}
+</div>
+
+<a href="{% url 'expenses' %}" class="btn btn-primary">Back</a>
+
+{% endblock %}

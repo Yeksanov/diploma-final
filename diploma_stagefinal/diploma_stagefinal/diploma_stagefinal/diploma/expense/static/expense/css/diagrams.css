@@ -1,0 +1,91 @@
+body {
+  min-height: 100vh;
+  height: auto;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+  background-image: url("https://sun9-9.userapi.com/impg/VrMYlL9OlQ_lysxWuP7WEgDHzcqb2grtdA2q-w/1UWbHLrbElI.jpg?size=2560x1463&quality=95&sign=121752bf96c84baef08a1b4ce94ec01f&type=album");
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+}
+
+.diagram-page {
+  padding: 100px 20px 60px;
+  background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+  min-height: 100vh;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.container.mt-5 {
+  background-color: #fff;
+  padding: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+#myChart {
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+#myChart .chartjs-text {
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chart-container {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 500px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 🔽 Мобильная адаптация */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute !important;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff !important;
+    z-index: 1050 !important;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .diagram-page {
+    padding: 80px 10px 40px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 15px;
+    height: auto;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

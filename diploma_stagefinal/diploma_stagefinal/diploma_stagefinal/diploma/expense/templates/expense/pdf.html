@@ -1,0 +1,53 @@
+{% extends 'main/auth_base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'expense/css/pdf.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Financial Summary</h2>
+
+    <form method="GET" action="">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
+
+        <button type="submit" class="btn btn-primary">Apply Filter</button>
+    </form>
+
+    <hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Expense Reason</th>
+                <th>Income</th>
+                <th>Expenses</th>
+                <th>Total</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.name }}</td>
+                <td>{{ expense.income }}</td>
+                <td>{{ expense.expenses }}</td>
+                <td>{{ expense.total }}</td>
+                <td>{{ expense.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total Income: {{ total_sum }}</p>
+    <p>Total Expenses: {{ total_expenses }}</p>
+    <p>Remaining Finance: {{ remaining_finance }}</p>
+
+     <a class="btn btn-secondary"> Financial Statistics</a>
+    <a href="{% url 'expenses' %}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

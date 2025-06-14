@@ -1,0 +1,85 @@
+{% extends 'main/auth_base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'expense/css/diagrams.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="diagram-page">
+
+  <h2 class="text-center mb-5 section-title">Financial Overview</h2>
+
+  <div class="chart-container shadow-sm">
+    <canvas id="myChart"></canvas>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/diagrams.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var labels = {{ chart_labels|safe }};
+        var dataIncome = {{ chart_income|safe }};
+        var dataExpenses = {{ chart_expenses|safe }};
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Income',
+                        data: dataIncome,
+                        backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        borderRadius: 6,
+                    },
+                    {
+                        label: 'Expenses',
+                        data: dataExpenses,
+                        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        borderRadius: 6,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

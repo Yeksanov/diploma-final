@@ -1,0 +1,62 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/header.css' %}">
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm bg-white">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
+      <img src="{% static 'main/img/icon-only.png' %}" alt="Logo" class="logo-img">
+      <span class="logo-text">FinanceApp</span>
+    </a>
+
+    <!-- Hamburger button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsing menu -->
+    <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
+      <ul class="navbar-nav mx-auto gap-3 fw-medium">
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Calculate</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'expenses' %}active{% endif %}" href="{% url 'expenses' %}">Track</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'diagrams' %}active{% endif %}" href="{% url 'diagrams' %}">Diagram</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'contactus' %}active{% endif %}" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+
+      </ul>
+
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+           id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'user/img/default.png' %}{% endif %}"
+               alt="Profile" width="40" height="40" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdown">
+          <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+          <li><a class="dropdown-item" href="{% url 'aboutus' %}">About us</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
